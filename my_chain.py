@@ -1,3 +1,5 @@
+from default import *
+
 class MyChain(Chain):
     def __init__(self):
         super(MyChain, self).__init__(
@@ -6,7 +8,9 @@ class MyChain(Chain):
         )
 
     def __call__(self, x, y):
-        return true
+        fv = self.fwd(x, y)
+        loss = F.mean_square_error(fv, y)
+        return loss
 
     def fwd(self, x, y):
-        return F.sigmoid(l1(x))
+        return F.sigmoid(self.l1(x))
