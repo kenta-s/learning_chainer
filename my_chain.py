@@ -9,7 +9,7 @@ class MyChain(Chain):
 
     def __call__(self, x, y):
         fv = self.fwd(x, y)
-        loss = F.mean_square_error(fv, y)
+        loss = F.mean_squared_error(fv, y)
         return loss
 
     def fwd(self, x, y):
