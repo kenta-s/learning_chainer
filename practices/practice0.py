@@ -64,3 +64,8 @@ for i in range(nrow):
         ok += 1
 
 print(ok, "/", nrow, " = ", (ok * 1.0)/nrow)
+#
+# from IPython import embed
+# from IPython.terminal.embed import InteractiveShellEmbed
+#
+# embed()
