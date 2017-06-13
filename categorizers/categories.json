@@ -3,5 +3,6 @@
   "1": "celebrity",
   "2": "sports",
   "3": "politics",
-  "4": "general"
+  "4": "TV",
+  "9999": "others"
 }
