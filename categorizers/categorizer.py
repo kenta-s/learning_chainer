@@ -14,6 +14,11 @@ import json
 # foo = open('categories.json', 'r')
 # bar = json.load(foo)
 
+import pandas as pd
+# usage of pandas is below
+# foo = pd.read_csv('news/yahoonews.csv')
+# foo['content'] # this should be a column name
+
 from gensim import corpora, matutils
 
 mecab = MeCab.Tagger("-Ochasen")
