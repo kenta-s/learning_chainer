@@ -8,7 +8,7 @@
 # $ pip install gensim
 
 import MeCab
-from gensim import corpora
+from gensim import corpora, matutils
 
 mecab = MeCab.Tagger("-Ochasen")
 
@@ -25,9 +25,17 @@ while node:
     node = node.next
 
 dictionary = corpora.Dictionary([words])
-print(dictionary.token2id)
+# print(dictionary.token2id)
+vec = dictionary.doc2bow(words)
+dense = list(matutils.corpus2dense([vec], num_terms=len(dictionary)).T[0])
 
-# from IPython import embed
-# from IPython.terminal.embed import InteractiveShellEmbed
-#
-# embed()
+from IPython import embed
+from IPython.terminal.embed import InteractiveShellEmbed
+
+embed()
+
+# # save
+# dictionary.save_as_text('hoge.txt')
+
+# # load
+# dictionary = corpora.Dictionay.load_from_text('hoge.txt')
