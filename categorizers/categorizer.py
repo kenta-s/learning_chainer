@@ -8,6 +8,12 @@
 # $ pip install gensim
 
 import MeCab
+import json
+# usage of json is below... (I'm a beginner in Python :P)
+#
+# foo = open('categories.json', 'r')
+# bar = json.load(foo)
+
 from gensim import corpora, matutils
 
 mecab = MeCab.Tagger("-Ochasen")
